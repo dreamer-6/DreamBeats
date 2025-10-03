@@ -179,8 +179,9 @@ li:hover .underline{
     background-color: var(--bg-color);
     color: var(--white);
     padding: 4em 2em;
+    margin-bottom: 5em;
 }
-#playlists .section-header h2{
+.section-header h2{
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 2em;
@@ -258,4 +259,171 @@ li:hover .underline{
 .play:hover{
     box-shadow: 0 0 10px #7f3aa1,0 0 5px #ff2d95;
     transform: scale(1.05);
+}
+/*----------------Now Playing Section----------------*/
+#now-playing{
+    width: 100%;
+    height: 100vh;
+    padding: 4em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.player{
+    width: 80%;
+    min-width: 300px;
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 3em;
+    padding: 1.5em;
+    border-radius: 20px;
+    margin-bottom: 3em;
+    background-image: linear-gradient(#000, #000),
+                      linear-gradient(135deg, #fc2e86, #ff70ff, #00ffd1, #ff2d95);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    animation: border-glow 6s linear infinite;
+}
+@keyframes border-glow {
+    0% {
+        background-image: linear-gradient(#000, #000),
+                          linear-gradient(0deg, #fc2e86, #ff70ff, #00ffd1, #ff2d95);
+    }
+    50% {
+        background-image: linear-gradient(#000, #000),
+                          linear-gradient(180deg, #00ffd1, #ff2d95, #fc2e86, #ff70ff);
+    }
+    100% {
+        background-image: linear-gradient(#000, #000),
+                          linear-gradient(360deg, #fc2e86, #ff70ff, #00ffd1, #ff2d95);
+    }
+}
+.artists-img-sec{
+    max-width: 200px;
+    height: 200px;
+}
+.artists-img-sec img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: image-rotate 15s linear infinite;
+}
+@keyframes image-rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.song-info-sec{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    margin-right: 1em;
+
+}
+.song-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+.artist-name{
+    font-weight: 200;
+    font-size: 0.5rem;
+}
+.progress-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.time{
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.progress-bar{
+    width: 90%;
+    height: 5px;
+    border-radius: 5px;
+    background: linear-gradient(to right,#fc2e86,#ff705f);
+    box-shadow: 0 0 10px #fc2e86, 0 0 20px #ff705f;
+    animation: progress-slide 3s linear infinite;
+}
+@keyframes progress-slide {
+    0%{
+        background: linear-gradient(to right,#fc2e86,#ff705f);
+    }
+    100%{
+        background: linear-gradient(to right, #fc2e86,#ff70ff);
+    }
+}
+.player-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.fa-solid{
+    font-size: 1rem;
+    color: #fff;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0.7em;
+    transition: 0.3s ease;
+}
+.fa-solid:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #ff2d95, 0 0 20px #fc2e86;
+}
+#now-playing .tagline{
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+    font-family: "Montserrat", sans-serif;
+}
+.app{
+    padding: 0.7em 1em;
+    font-size: 0.8rem;
+    background-color: transparent;
+    border: 1px solid #fc2e86;
+    color: #fff;
+    font-weight: 300;
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.app:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #fc2e86;
+}
+@media(max-width: 768px){
+    .player {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+    .song-info-sec {
+        width: 100%;
+    }
 }
