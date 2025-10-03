@@ -340,7 +340,7 @@ li:hover .underline{
     letter-spacing: 1px;
     margin-bottom: 5px;
 }
-.artist-name{
+#now-playing .artist-name{
     font-weight: 200;
     font-size: 0.5rem;
 }
@@ -426,4 +426,86 @@ li:hover .underline{
     .song-info-sec {
         width: 100%;
     }
+}
+/*----------------Artists Section----------------*/
+#artists{
+    background-color: #000;
+    padding: 4em 2em;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2em;
+    color: #fff;
+}
+
+.section-title span {
+    background: linear-gradient(to right, #00ffd1, #ff2d95);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.artists-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 2em;
+}
+.artist-card{
+
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 2em 1em;
+    border-radius: 15px;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+.artist-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #5416b5;
+}
+.artist-img{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1em;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    animation: glowRotate 4s linear infinite;
+}
+@keyframes glowRotate {
+    0%{ border-color: #ff2d95;}
+    25%{border-color: #00ffd1;}
+    50%{border-color: #e2203b;}
+    75%{border-color: #7f3aa1;}
+    100%{border-color: #ff2d95;}
+}
+.artist-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.artist-card h3{
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.follow-btn{
+    padding: 0.5em 1.2em;
+    background-color: transparent;
+    border: 1px solid #ff2d95;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.follow-btn:hover{
+    background: linear-gradient(to right,#00ffd1,#ff2d95);
+    color: #000;
+    box-shadow: 0 0 15px #ff2d95;
 }
