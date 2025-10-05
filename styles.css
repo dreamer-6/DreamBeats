@@ -849,7 +849,7 @@ li:hover .underline{
         gap: 10px;
     }
 }
-@media screen and (max-width:360px) {
+@media screen and (max-width:420px) {
     .heading{
         font-size: 2.5rem;
     }
