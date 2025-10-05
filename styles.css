@@ -10,6 +10,7 @@
     --white: #fff;
     --black: #000;
     --crimson: #e2203b;
+    --insta: linear-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
 }
 body{
     max-width: 1350px;
@@ -31,8 +32,9 @@ header{
     padding: 1em 2.5em;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 999;
 }
+
 .logo a{
     background: linear-gradient(to right, #00fff0, #ff0080);
     -webkit-text-fill-color: transparent;
@@ -197,7 +199,6 @@ li:hover .underline{
 }
 .card{
     width: minmax(200px, 250px);
-    max-height: 400px;
     border-radius: 20px;
     background-color: #121212;
     display: flex;
@@ -265,7 +266,6 @@ li:hover .underline{
 /*----------------Now Playing Section----------------*/
 #now-playing{
     background: url(Resources/opoy7.jpg) no-repeat center/cover;
-
     width: 100%;
     height: 100%;
     padding: 4em 2em;
@@ -413,7 +413,6 @@ li:hover .underline{
     color: #fff;
     font-weight: 300;
     border-radius: 5px;
-
     cursor: pointer;
     transition: 0.3s ease;
 }
@@ -530,6 +529,7 @@ li:hover .underline{
 .event-grid{
     display: grid;
     grid-template-rows: 1fr;
+    justify-content: center;
     gap: 1em;
     margin-bottom: 2em;
 }
@@ -639,4 +639,267 @@ li:hover .underline{
     background-color: #ffffff54;
     color: #000;
     font-weight: 500;
+}
+/*----------------Subscribe Section----------------*/
+#subscribe{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 4em 2em;
+    position: relative;
+}
+#subscribe h3{
+    font-size: 3rem;
+}
+#subscribe p{
+    font-size: 1.2rem;
+}
+#email{
+    width: 250px;
+    height: 30px;
+    padding: 1em;border-radius: 10px;
+    border: 1px solid #7f3aa1;
+    background-color: #000;
+    color: #00fff0;
+    margin-bottom: 1em;
+}
+#email:focus{
+    outline: 1px solid #a230ed;
+    box-shadow: 0 0 15px #a230ed;
+}
+#email::placeholder{
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+.subs{
+    padding: 5px 20px;
+    border: 1px solid #a230ed;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    background-color: transparent;
+    color: #fff;
+    box-shadow: 0 0 10px #a230ed;
+    transition: 0.3s ease;
+    cursor: pointer;
+    animation: buttonGlow 3s infinite;
+}
+.subs:hover{
+    transform: scale(1.1);
+}
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0 0 10px #a230ed, 0 0 20px #a230ed55;
+    }
+    50% {
+        box-shadow: 0 0 10px #ff2d95, 0 0 20px #ff2d9555;
+    }
+    100% {
+        box-shadow: 0 0 10px #a230ed, 0 0 20px #a230ed55;
+    }
+}
+/*----------------Footer Section----------------*/
+#footer{
+    color: #fff;
+    background-color: #131313;
+    width: 100%;
+    height: 100px;
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.content-block{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#footer .logo a{
+    font-size: 1.5rem;
+}
+.nav-links a{
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+.nav-links a:hover{
+    color: #a230ed;
+    text-shadow: 0 0 5px #a230ed;
+}
+.fa-brands{
+    margin-right: 15px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+.fa-facebook:hover{
+    color: #1877F2;
+    transform: scale(1.5);
+    text-shadow: 0 0 10px #1877F2;
+}
+.fa-x-twitter:hover{
+    color: #fff;
+    transform: scale(1.5);
+    text-shadow: 0 0 10px #fff;
+}
+.fa-instagram:hover{
+    background: linear-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.5);
+    text-shadow: 0 0 10px #fc2e86;
+}
+.fa-google:hover{
+    background: linear-gradient(#f7443f,#f5ca0d,#0fb65a,#2f82f8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.5);
+    text-shadow: 0 0 10px #2f82f8;
+}
+.contact-info{
+    background-color: #000;
+    border: 1px solid #7f3aa1;
+    padding: 0.3em 1em;
+    cursor: pointer;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+.contact-info .email:hover{
+    color: #962fbf;
+    text-shadow: 0 0 20px #962fbf;
+}
+.copyright{
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+/* -----------Meadia Query Section------------ */
+@media screen and (max-width:720px) {
+    header{
+        position: static;
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav ul li a{
+        font-size: 0.85rem;
+    }
+    .log-btn{
+        width: 65px;
+        padding: 0.4em 0.6em;
+    }
+    #home{
+        height: 50vh;
+    }
+    .heading{
+        font-size: 3rem;
+    }
+    .tagline{
+        font-size: 1rem;
+    }
+    .listen{
+        font-size: 1rem;
+        padding: 0.2em 0.7em;
+    }
+    .player{
+        max-width: 350px;
+    }
+    .event-card{
+        width: calc(100%-30px);
+    }
+    .event-img{
+        width: 20%;
+        max-width: 150px;
+        height: 100%;
+    }
+    .event-name{
+        font-size: 0.9rem;
+    }
+    .location{
+        font-size: 0.7rem;
+    }
+    .event-ticket-sec{
+        width: 90px;
+        height: 90px;
+        margin-right: 30px;
+    }
+    .event-ticket{
+        width: 80px;
+        height: 80px;
+        font-size: 0.7rem;
+    }
+    #footer{
+        height: auto;
+    }
+    .content-block{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media screen and (max-width:360px) {
+    .heading{
+        font-size: 2.5rem;
+    }
+    .tagline{
+        font-size: 0.8rem;
+    }
+    .listen{
+        font-size: 0.8rem;
+        padding: 0.2em 0.7em;
+    }
+    .section-header h2{
+        font-size: 2rem;
+    }
+    .event-card{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-width: 250px;
+        height: auto;
+        padding: 5px;
+    }
+    .event-img {
+        width: 100%;
+        max-height: 150px;
+    }
+    .event-info{
+        width: 100%;
+        padding: 0;
+    }
+    .event-ticket-sec {
+        width: 70px;
+        height: 70px;
+        border-radius: 0;
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
+    .event-ticket-sec:hover{
+        box-shadow:  0 0 10px #7f3aa1;
+    }
+    .event-ticket-sec::before{
+        display: none;
+    }
+    .event-ticket{
+        width: 60px;
+        height: 60px;
+        border-radius: 0;
+        border: none;
+        font-size: 0.6rem;
+    }
+    #subscribe h3{
+        font-size: 2.2rem;
+    }
+    #subscribe p{
+        font-size: 0.6rem;
+        text-align: center;
+        opacity: 0.7;
+    }
 }
